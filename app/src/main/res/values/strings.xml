@@ -5,4 +5,5 @@
     <string name="username2">用户2</string>
     <string name="setting">系统设置</string>
     <string name="bussinessover">业务结束</string>
+    <string name="facecheck">人脸识别</string>
 </resources>

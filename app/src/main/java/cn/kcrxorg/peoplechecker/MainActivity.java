@@ -1,8 +1,13 @@
 package cn.kcrxorg.peoplechecker;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -28,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         startOrBussinessOver();
+        Button facecheckbtn= (Button) findViewById(R.id.btn_main_facecheck);
+        facecheckbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(MainActivity.this,MyCamera.class);
+                startActivity(it);
+            }
+        });
     }
 
     public void startOrBussinessOver()
@@ -58,5 +71,13 @@ public class MainActivity extends AppCompatActivity {
 
         BankitemAdapter bankitemAdapter=new BankitemAdapter(bankItems,MainActivity.this);
         contentman.setAdapter(bankitemAdapter);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == MainActivity.RESULT_OK){
+            Bundle bundle = data.getExtras();
+            Bitmap bitmap = (Bitmap) bundle.get("data");
+        }
     }
 }

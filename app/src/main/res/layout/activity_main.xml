@@ -33,6 +33,13 @@
         android:layout_weight="1"
         android:text="@string/bussinessover"
         android:textSize="24sp"/>
+       <Button
+           android:id="@+id/btn_main_facecheck"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="@string/facecheck"
+           android:textSize="24sp"/>
 </LinearLayout>
 
 
