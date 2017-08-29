@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">商业银行交取款排队交行及人员身份核验系统</string>
+    <string name="bankname">银行名称</string>
+    <string name="username1">用户1</string>
+    <string name="username2">用户2</string>
+    <string name="setting">系统设置</string>
+    <string name="bussinessover">业务结束</string>
+</resources>
