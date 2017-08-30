@@ -19,16 +19,21 @@ import cn.kcrxorg.peoplechecker.beans.BankItem;
 import cn.kcrxorg.peoplechecker.beans.User;
 import cn.kcrxorg.peoplechecker.mapper.BankMapper;
 import cn.kcrxorg.peoplechecker.mapper.Usermapper;
+import cn.kcrxorg.peoplechecker.util.UserLGtool;
 
 public class MainActivity extends AppCompatActivity {
-
-
+Button btn_main_over;
+    GridView contentman;
+    UserLGtool userLGtool;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //初始化界面
         init();
+        //启动ftp服务
+        userLGtool=new UserLGtool();
+        userLGtool.startFtpServer(this);
     }
 
     private void init() {
@@ -39,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it = new Intent(MainActivity.this,MyCamera.class);
                 startActivity(it);
+            }
+        });
+        btn_main_over= (Button) findViewById(R.id.btn_main_over);
+        btn_main_over.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startOrBussinessOver();
             }
         });
     }
@@ -66,18 +78,15 @@ public class MainActivity extends AppCompatActivity {
             }
             bankItems.add(bankItem);
         }
-
-        GridView contentman= (GridView) findViewById(R.id.contener_man);
-
+        contentman= (GridView) findViewById(R.id.contener_man);
         BankitemAdapter bankitemAdapter=new BankitemAdapter(bankItems,MainActivity.this);
         contentman.setAdapter(bankitemAdapter);
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == MainActivity.RESULT_OK){
-            Bundle bundle = data.getExtras();
-            Bitmap bitmap = (Bitmap) bundle.get("data");
-        }
+    protected void onDestroy() {
+        userLGtool.stop();
+        super.onDestroy();
+
     }
 }

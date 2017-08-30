@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bankuinew"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    >
 
     <TextView
         android:id="@+id/tv_item_bankname"
@@ -11,7 +13,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/bankname"
-        android:textSize="24sp"/>
+        android:textColor="?attr/colorAccent"
+        android:textSize="24sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,14 +25,14 @@
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:maxHeight="200dp"/>
+            android:maxHeight="200dp" />
 
         <ImageView
             android:id="@+id/iv_item_user2"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_weight="1"
-            android:maxHeight="200dp"/>
+            android:maxHeight="200dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -38,13 +41,13 @@
 
         <TextView
             android:id="@+id/tv_item_user1"
-            android:gravity="center"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="@string/username1"
-            android:textSize="18sp"
-            />
+            android:textColor="@color/holeback"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tv_item_user2"
@@ -53,7 +56,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/username2"
-            android:textSize="18sp"/>
+            android:textColor="@color/holeback"
+            android:textSize="18sp" />
     </LinearLayout>
 
 </LinearLayout>

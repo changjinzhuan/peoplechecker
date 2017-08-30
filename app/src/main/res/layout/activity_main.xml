@@ -13,33 +13,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:numColumns="5"
-
+            android:layoutAnimation="@anim/anim_gridtview_item"
             >
         </GridView>
    <LinearLayout
     android:id="@+id/bar_main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true">
+    android:layout_alignParentBottom="true"
+      >
     <Button
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/setting"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        />
     <Button
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/bussinessover"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        android:id="@+id/btn_main_over"
+        />
        <Button
            android:id="@+id/btn_main_facecheck"
            android:layout_width="0dp"
            android:layout_height="wrap_content"
            android:layout_weight="1"
            android:text="@string/facecheck"
-           android:textSize="24sp"/>
+           android:textSize="24sp"
+           />
 </LinearLayout>
 
 
